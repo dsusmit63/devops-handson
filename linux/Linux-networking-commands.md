@@ -30,3 +30,15 @@
 
 ### traceroute
 - It shows hop-by-hop routers your packet takes to reach destination
+
+## DNS commands
+
+### nslookup
+- DNS query tool, queries a DNS server to resolve a domain name into an IP address
+
+### dig
+- Domain Information Grouper
+- It is a powerful DNS troubleshooting tool, gives more detailed DNS response information
+
+### host
+- It is a simple DNS lookup tool
