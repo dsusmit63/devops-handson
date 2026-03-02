@@ -21,7 +21,7 @@
 - Create a logical volume of 10G from the volume group and run lvs to view the details of the created logical volume.
 - Run lsblk now and view the details
 
-## Task 4: Mount logical volume
+## Task 4: Mount,unmount logical volume and dynamic storage management
 - Create a mountpoint directory (mkdir /mnt/my-lv-mount)
 - Format the logical volume before mounting
 - Mount the logical volume to the mountpoint
@@ -30,3 +30,11 @@
 - Run df -h and verify if the mounted loggical volume is listed there or not.
 - Unmount the volume. Now try to read the same file from /. Is it accessible now? If not why?
 - Now again mount the same volume. Check if the file is there inside /mnt/my-lv-mount?
+- Increase the size of the logical volume by 5G and check lsblk to verify how it has been adjusted
+
+## Task 5: Mount EBS volume directly (without creating logical volume)
+- Create a EBS volume of 10G.
+- Create a directory to mount the EBS volume (/mnt/my-disk-mount).
+- Format the created volume.
+- Bind the volume with the created mountpoint.
+- Run df -h and verify if the volume is mounted or not.
