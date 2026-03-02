@@ -38,3 +38,26 @@
 - Format the created volume.
 - Bind the volume with the created mountpoint.
 - Run df -h and verify if the volume is mounted or not.
+
+### Commands Reference
+```bash
+lsblk                                       ### List all blocks (disks, partitions, lvm volumes) in tree format
+df -h                                       ### Shows mounted filesystems and their disk usage in human readable format
+lvm                                         ### Opens LVM interactive shell for managing volumes
+pvcreate /dev/xvdf /dev/xvdg                ### Initializes a disk as an LVM physical volume
+pvs                                         ### Displays summary information about physical volumes
+pvdisplay                                   ### Shows detailed information about physical volumes
+pvdisplay /dev/xvdf                         ### Shows detailed information about specified physical volume
+vgcreate my-vg /dev/xvdf /dev/xvdg          ### Creates a volume group from one or more physical volumes
+vgs                                         ### Displays summary information about volume group
+vgdisplay my-vg                             ### Shows detailed information about a volume group
+lvcreate -L 10G -n my-lv my-vg              ### Creates a logical volume from a volume group
+lvs                                         ### Displays summary information about logical volumes
+lvdisplay /dev/my-vg/my-lv                  ### Shows detailed information about a logical volume
+lvextend -L +5G /dev/my-vg/my-lv            ### Extends the size of an existing logical volume
+mkfs.ext4 /dev/my-vg/my-lv                  ### Formats a logical volume with EXT4 filesystem
+mkfs -t ext4 /dev/xvdh                      ### Formats a normal disk with EXT4 filesystem
+mount /dev/my-vg/my-lv /mnt/my-lv-mount     ### Attaches a filesystem to a directory (mountpoint)
+umount /mnt/my-lv-mount                     ### Detaches a mounted filesystem
+sudo resize2fs /dev/my-vg/my-lv             ### After lvextend
+```
