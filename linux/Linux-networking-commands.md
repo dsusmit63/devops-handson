@@ -12,7 +12,7 @@
 ### ip addr show
 - Same as ip addr/ip a
 
-### iconfig
+### ifconfig
 - Deprecated, shows all network interfaces and their IP addresses
 
 ### hostname
